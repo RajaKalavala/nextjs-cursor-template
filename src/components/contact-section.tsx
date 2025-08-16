@@ -10,7 +10,6 @@ import {
   CheckCircle,
   MessageSquare,
   Clock,
-  Globe,
 } from 'lucide-react'
 
 const contactInfo = [
@@ -108,7 +107,7 @@ export function ContactSection() {
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Ready to start your next project? Let's discuss how we can help
+            Ready to start your next project? Let&apos;s discuss how we can help
             bring your ideas to life and create something amazing together.
           </p>
         </motion.div>
@@ -131,7 +130,7 @@ export function ContactSection() {
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
                   <h4 className="text-xl font-semibold mb-2">Message Sent!</h4>
                   <p className="text-muted-foreground">
-                    Thank you for reaching out. We'll get back to you within 24
+                    Thank you for reaching out. We&apos;ll get back to you within 24
                     hours.
                   </p>
                 </motion.div>

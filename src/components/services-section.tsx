@@ -153,7 +153,7 @@ export function ServicesSection() {
           whileInView="visible"
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <motion.div
               key={service.title}
               variants={cardVariants}
@@ -214,7 +214,7 @@ export function ServicesSection() {
               Ready to Start Your Project?
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Let's discuss your requirements and create a custom solution that
+              Let&apos;s discuss your requirements and create a custom solution that
               perfectly fits your business needs and goals.
             </p>
             <button className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-primary/25 transition-all duration-300">

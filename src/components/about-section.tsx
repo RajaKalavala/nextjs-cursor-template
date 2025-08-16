@@ -5,8 +5,6 @@ import {
   Users,
   Target,
   Award,
-  Clock,
-  CheckCircle,
   Star,
   ArrowRight,
 } from 'lucide-react'
@@ -166,7 +164,7 @@ export function AboutSection() {
                 solutions that make a difference.
               </p>
               <p>
-                Today, we've grown into a full-service development agency,
+                Today, we&apos;ve grown into a full-service development agency,
                 serving clients across the globe with cutting-edge mobile apps,
                 web applications, and AI solutions.
               </p>

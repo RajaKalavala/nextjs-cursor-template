@@ -53,17 +53,14 @@ export function ThemeProvider({
         : 'light'
 
       root.classList.add(systemTheme)
-      console.log('Theme set to system:', systemTheme)
     } else {
       root.classList.add(theme)
-      console.log('Theme set to:', theme)
     }
   }, [theme, mounted])
 
   const value = {
     theme,
     setTheme: (newTheme: Theme) => {
-      console.log('Setting theme to:', newTheme)
       if (typeof window !== 'undefined') {
         localStorage?.setItem(storageKey, newTheme)
       }
