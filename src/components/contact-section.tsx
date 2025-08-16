@@ -130,8 +130,8 @@ export function ContactSection() {
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
                   <h4 className="text-xl font-semibold mb-2">Message Sent!</h4>
                   <p className="text-muted-foreground">
-                    Thank you for reaching out. We&apos;ll get back to you within 24
-                    hours.
+                    Thank you for reaching out. We&apos;ll get back to you
+                    within 24 hours.
                   </p>
                 </motion.div>
               ) : (
