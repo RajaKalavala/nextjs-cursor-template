@@ -5,11 +5,11 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Play } from 'lucide-react'
 
 const services = [
-  'Mobile Development',
-  'Web Development',
-  'AI Integration',
-  'UI/UX Design',
-  'Cloud Solutions',
+  'Mobile App Development',
+  'Web App Development',
+  'AI Automation',
+  // 'UI/UX Design',
+  // 'Cloud Solutions',
 ]
 
 export function HeroSection() {
@@ -62,7 +62,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-8 h-8">
+            className="text-xl md:text-2xl text-muted-foreground mb-8 min-h-[2rem]">
             Professional{' '}
             <span className="text-foreground font-semibold">
               {services[currentService]}
@@ -109,7 +109,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold gradient-text mb-2">50+</div>
+              <div className="text-3xl font-bold gradient-text mb-2">5+</div>
               <div className="text-muted-foreground">Projects Completed</div>
             </div>
             <div className="text-center">

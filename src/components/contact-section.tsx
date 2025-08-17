@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import {
   Mail,
@@ -60,6 +60,32 @@ export function ContactSection() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+
+  // Listen for custom event to set project type
+  useEffect(() => {
+    const handleSetProjectType = (event: CustomEvent) => {
+      setFormData(prev => ({
+        ...prev,
+        projectType: event.detail.projectType
+      }))
+    }
+
+    // Check URL parameters on mount
+    const urlParams = new URLSearchParams(window.location.search)
+    const projectType = urlParams.get('type')
+    if (projectType === 'consultation') {
+      setFormData(prev => ({
+        ...prev,
+        projectType: 'consultation'
+      }))
+    }
+
+    window.addEventListener('setProjectType', handleSetProjectType as EventListener)
+    
+    return () => {
+      window.removeEventListener('setProjectType', handleSetProjectType as EventListener)
+    }
+  }, [])
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -201,12 +227,17 @@ export function ContactSection() {
                         name="projectType"
                         value={formData.projectType}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:border-primary focus:outline-none transition-colors">
+                        className="w-full px-4 py-3 pr-12 border border-border rounded-lg bg-background text-foreground focus:border-primary focus:outline-none transition-colors appearance-none"
+                        style={{
+                          backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e")`,
+                          backgroundPosition: 'right 12px center',
+                          backgroundRepeat: 'no-repeat',
+                          backgroundSize: '16px 12px'
+                        }}>
                         <option value="">Select project type</option>
                         <option value="mobile">Mobile App Development</option>
                         <option value="web">Web Application</option>
-                        <option value="ai">AI Integration</option>
-                        <option value="design">UI/UX Design</option>
+                        <option value="ai">AI Automation</option>
                         <option value="consultation">Consultation</option>
                         <option value="other">Other</option>
                       </select>

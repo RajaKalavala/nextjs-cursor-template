@@ -5,9 +5,6 @@ import {
   Smartphone,
   Globe,
   Brain,
-  Code,
-  Palette,
-  Cloud,
   ArrowRight,
   CheckCircle,
 } from 'lucide-react'
@@ -48,65 +45,19 @@ const services = [
   },
   {
     icon: Brain,
-    title: 'AI Integration',
+    title: 'AI Automations',
     description:
-      'Intelligent features and automation powered by artificial intelligence',
+      'Intelligent workflows and process automation for businesses',
     features: [
-      'ChatGPT Integration',
-      'Machine Learning Models',
-      'Natural Language Processing',
-      'Computer Vision',
-      'Predictive Analytics',
-      'Automation Workflows',
+      'Lead Capture & CRM Sync',
+      'Smart Support Triage',
+      'Invoice & Payments Automation',
+      'Employee On/Offboarding',
+      'Churn & Renewal Alerts',
+      'Daily KPI Dashboards',
     ],
     gradient: 'from-purple-500 to-pink-600',
     delay: 0.3,
-  },
-  {
-    icon: Code,
-    title: 'Custom Software',
-    description: 'Tailored software solutions for your specific business needs',
-    features: [
-      'Enterprise Applications',
-      'API Development',
-      'Microservices Architecture',
-      'Cloud Deployment',
-      'Scalable Solutions',
-      'Maintenance & Support',
-    ],
-    gradient: 'from-orange-500 to-red-600',
-    delay: 0.4,
-  },
-  {
-    icon: Palette,
-    title: 'UI/UX Design',
-    description:
-      'Beautiful, intuitive user interfaces and exceptional user experiences',
-    features: [
-      'User Research & Testing',
-      'Wireframing & Prototyping',
-      'Visual Design Systems',
-      'Interactive Prototypes',
-      'Accessibility Design',
-      'Design Handoffs',
-    ],
-    gradient: 'from-pink-500 to-purple-600',
-    delay: 0.5,
-  },
-  {
-    icon: Cloud,
-    title: 'Cloud Solutions',
-    description: 'Scalable cloud infrastructure and deployment solutions',
-    features: [
-      'AWS & Azure Services',
-      'Docker & Kubernetes',
-      'CI/CD Pipelines',
-      'Database Management',
-      'Security & Compliance',
-      'Monitoring & Analytics',
-    ],
-    gradient: 'from-cyan-500 to-blue-600',
-    delay: 0.6,
   },
 ]
 
@@ -152,7 +103,7 @@ export function ServicesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {services.map((service) => (
             <motion.div
               key={service.title}
@@ -217,7 +168,23 @@ export function ServicesSection() {
               Let&apos;s discuss your requirements and create a custom solution that
               perfectly fits your business needs and goals.
             </p>
-            <button className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-primary/25 transition-all duration-300">
+            <button 
+              onClick={() => {
+                // Scroll to contact section
+                const contactSection = document.querySelector('#contact')
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' })
+                }
+                // Set URL parameter to auto-select consultation
+                setTimeout(() => {
+                  window.history.pushState({}, '', '#contact?type=consultation')
+                  // Trigger a custom event to notify contact form
+                  window.dispatchEvent(new CustomEvent('setProjectType', { 
+                    detail: { projectType: 'consultation' } 
+                  }))
+                }, 500)
+              }}
+              className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-primary/25 transition-all duration-300">
               Get Free Consultation
             </button>
           </div>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from './theme-toggle'
+import { Logo } from './logo'
 import { cn } from '@/lib/utils'
 
 const navigationItems = [
@@ -48,8 +49,8 @@ export function Navigation() {
           <div className="flex items-center">
             <button
               onClick={() => scrollToSection('#home')}
-              className="text-2xl font-bold gradient-text hover:opacity-80 transition-opacity">
-              Botiksha.in
+              className="hover:opacity-80 transition-opacity">
+              <Logo size="md" />
             </button>
           </div>
 

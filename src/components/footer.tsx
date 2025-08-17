@@ -12,11 +12,11 @@ const quickLinks = [
 ]
 
 const services = [
-  { name: 'Mobile Development', href: '#services' },
-  { name: 'Web Development', href: '#services' },
-  { name: 'AI Integration', href: '#services' },
-  { name: 'UI/UX Design', href: '#services' },
-  { name: 'Cloud Solutions', href: '#services' },
+  { name: 'Mobile App Development', href: '#services' },
+  { name: 'Web App Development', href: '#services' },
+  { name: 'AI Automation', href: '#services' },
+  // { name: 'UI/UX Design', href: '#services' },
+  // { name: 'Cloud Solutions', href: '#services' },
 ]
 
 const scrollToTop = () => {
