@@ -9,6 +9,10 @@ import {
   ArrowRight,
 } from 'lucide-react'
 
+// Feature flags
+const SHOW_TEAM_SECTION = false
+const SHOW_ABOUT_HEADER = false
+
 const stats = [
   {
     icon: Users,
@@ -116,35 +120,37 @@ export function AboutSection() {
         </motion.div>
 
         {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="w-8 h-8 text-white" />
-              </div>
-              <div className="text-3xl font-bold gradient-text mb-2">
-                {stat.value}
-              </div>
-              <div className="text-lg font-semibold text-foreground mb-1">
-                {stat.label}
-              </div>
-              <div className="text-sm text-muted-foreground">
-                {stat.description}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+        {SHOW_ABOUT_HEADER && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-3xl font-bold gradient-text mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-lg font-semibold text-foreground mb-1">
+                  {stat.label}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  {stat.description}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
 
         {/* Company Story */}
         <motion.div
@@ -226,38 +232,40 @@ export function AboutSection() {
         </motion.div>
 
         {/* Team Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}>
-          <h3 className="text-3xl font-bold text-center mb-12">
-            Meet Our <span className="gradient-text">Team</span>
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center group">
-                <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl group-hover:scale-110 transition-transform duration-300">
-                  {member.avatar}
-                </div>
-                <h4 className="text-lg font-semibold mb-1">{member.name}</h4>
-                <p className="text-primary font-medium mb-2">{member.role}</p>
-                <p className="text-sm text-muted-foreground mb-1">
-                  {member.expertise}
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  {member.experience}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        {SHOW_TEAM_SECTION && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            viewport={{ once: true }}>
+            <h3 className="text-3xl font-bold text-center mb-12">
+              Meet Our <span className="gradient-text">Team</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {team.map((member, index) => (
+                <motion.div
+                  key={member.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center group">
+                  <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl group-hover:scale-110 transition-transform duration-300">
+                    {member.avatar}
+                  </div>
+                  <h4 className="text-lg font-semibold mb-1">{member.name}</h4>
+                  <p className="text-primary font-medium mb-2">{member.role}</p>
+                  <p className="text-sm text-muted-foreground mb-1">
+                    {member.expertise}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {member.experience}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
       </div>
     </section>
   )
