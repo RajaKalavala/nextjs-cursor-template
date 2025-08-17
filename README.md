@@ -1,4 +1,50 @@
+# Next.js Portfolio Template
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## 🔥 Firebase Setup (Secure API Route)
+
+This project uses Firebase for contact form submissions via a secure API route. Firebase configuration is kept server-side for maximum security.
+
+### 1. Create Environment Variables
+
+Create a `.env.local` file in the root directory with your Firebase configuration:
+
+```bash
+# Firebase Configuration (Server-side only)
+FIREBASE_API_KEY=your_api_key_here
+FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+FIREBASE_PROJECT_ID=your_project_id
+FIREBASE_STORAGE_BUCKET=your_project.firebasestorage.app
+FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+FIREBASE_APP_ID=your_app_id
+FIREBASE_MEASUREMENT_ID=your_measurement_id
+```
+
+**Note:** These are server-side environment variables (no `NEXT_PUBLIC_` prefix) for maximum security.
+
+### 2. Firebase Project Setup
+
+1. Go to [Firebase Console](https://console.firebase.google.com/)
+2. Create a new project or select existing one
+3. Enable Firestore Database
+4. Set up security rules to allow writes to `contact_messages` collection
+5. Get your project configuration from Project Settings > General > Your Apps
+
+### 3. Vercel Deployment
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Add environment variables in Vercel dashboard:
+   - Go to Project Settings > Environment Variables
+   - Add all Firebase variables (without `NEXT_PUBLIC_` prefix)
+4. Deploy!
+
+**Security Benefits:**
+- ✅ Firebase config never exposed to client
+- ✅ Server-side validation and processing
+- ✅ Protected by Vercel's security features
+- ✅ Can add rate limiting, validation, etc.
 
 ## Getting Started
 

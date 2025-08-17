@@ -47,15 +47,15 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Mail className="w-4 h-4" />
-                <span>hello@botiksha.in</span>
+                <span>admin@botiksha.in</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 891 953 5478</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4" />
-                <span>San Francisco, CA</span>
+                <span>Bangalore, India</span>
               </div>
             </div>
           </motion.div>
@@ -142,11 +142,11 @@ export function Footer() {
           className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span>© 2024 Botiksha.in. All rights reserved.</span>
+              <span>© 2025 Botiksha.in. All rights reserved.</span>
               <span>•</span>
               <span>Made with</span>
               <Heart className="w-4 h-4 text-red-500" />
-              <span>in San Francisco</span>
+              <span>in Bangalore</span>
             </div>
 
             <div className="flex items-center gap-4">

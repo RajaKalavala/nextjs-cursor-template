@@ -165,39 +165,32 @@ export function AboutSection() {
             </h3>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Founded in 2019, Botiksha.in started as a small team of
-                passionate developers with a vision to create innovative digital
-                solutions that make a difference.
+                Botiksha was born from a small team of passionate builders with a bold vision — to break the barriers of traditional software development. We asked ourselves: why should creating powerful digital solutions take months, when businesses need results today?
               </p>
               <p>
-                Today, we&apos;ve grown into a full-service development agency,
-                serving clients across the globe with cutting-edge mobile apps,
-                web applications, and AI solutions.
+                Fueled by AI and modern frameworks, we set out to change the way applications are built. From mobile apps that feel native across platforms, to web solutions that scale seamlessly, to AI-powered automations that eliminate repetitive work — we focus on delivering speed, quality, and impact.
               </p>
               <p>
-                Our mission is to empower businesses with technology that drives
-                growth, enhances user experience, and creates lasting impact in
-                the digital world.
+                Our mission is simple yet ambitious: to empower businesses with technology that drives growth, delights users, and leaves a lasting mark in the digital world.
+              </p>
+              <p>
+                At Botiksha, we don&apos;t just write code. We craft experiences. We accelerate ideas. And we make technology an ally for every business, big or small.
               </p>
             </div>
-            <button className="mt-6 inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-semibold">
-              Learn More About Us
-              <ArrowRight className="w-4 h-4" />
-            </button>
           </div>
-          <div className="relative">
-            <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl p-8 h-80 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-6xl mb-4">🏢</div>
-                <div className="text-2xl font-bold text-foreground">
-                  Our Journey
-                </div>
-                <div className="text-muted-foreground">
-                  From startup to success
+                                           <div className="relative">
+              <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl p-8 h-full min-h-[430px] flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-6xl mb-4">⚡</div>
+                  <div className="text-2xl font-bold text-foreground mb-2">
+                    Speed & Innovation
+                  </div>
+                  <div className="text-muted-foreground text-sm max-w-xs">
+                    Breaking barriers, delivering results faster than ever before
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         </motion.div>
 
         {/* Values Section */}

@@ -10,35 +10,30 @@ import {
   CheckCircle,
   MessageSquare,
   Clock,
+  AlertCircle,
 } from 'lucide-react'
+
 
 const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    value: 'hello@botiksha.in',
+    value: 'admin@botiksha.in',
     description: 'Send us an email anytime',
-    link: 'mailto:hello@botiksha.in',
+    link: 'mailto:admin@botiksha.in',
   },
   {
     icon: Phone,
     title: 'Call Us',
-    value: '+1 (555) 123-4567',
-    description: 'Mon-Fri from 8am to 6pm',
-    link: 'tel:+15551234567',
+    value: '+91 891 953 5478',
+    description: 'All days 8AM to 8PM IST',
+    link: 'tel:+918919535478',
   },
   {
     icon: MapPin,
     title: 'Visit Us',
-    value: 'San Francisco, CA',
-    description: 'Come say hello at our office',
-    link: '#',
-  },
-  {
-    icon: MessageSquare,
-    title: 'Live Chat',
-    value: 'Available 24/7',
-    description: 'Get instant support',
+    value: 'Bangalore, India',
+    description: 'Schedule an in-person meeting',
     link: '#',
   },
 ]
@@ -60,6 +55,7 @@ export function ContactSection() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   // Listen for custom event to set project type
   useEffect(() => {
@@ -99,24 +95,42 @@ export function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        projectType: '',
-        message: '',
+    try {
+      // Send message to API route
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       })
-    }, 3000)
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message')
+      }
+
+      setIsSubmitting(false)
+      setIsSubmitted(true)
+
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          projectType: '',
+          message: '',
+        })
+      }, 3000)
+    } catch (err) {
+      setIsSubmitting(false)
+      setError(err instanceof Error ? err.message : 'Failed to send message. Please try again.')
+    }
   }
 
   return (
@@ -159,6 +173,22 @@ export function ContactSection() {
                     Thank you for reaching out. We&apos;ll get back to you
                     within 24 hours.
                   </p>
+                </motion.div>
+              ) : error ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="text-center py-8">
+                  <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
+                  <h4 className="text-xl font-semibold mb-2 text-red-600">Error</h4>
+                  <p className="text-muted-foreground mb-4">
+                    {error}
+                  </p>
+                  <button
+                    onClick={() => setError(null)}
+                    className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+                    Try Again
+                  </button>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -317,34 +347,7 @@ export function ContactSection() {
               ))}
             </div>
 
-            {/* Business Hours */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-6 border border-primary/20">
-              <div className="flex items-center gap-3 mb-4">
-                <Clock className="w-6 h-6 text-primary" />
-                <h4 className="font-semibold text-foreground">
-                  Business Hours
-                </h4>
-              </div>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <div className="flex justify-between">
-                  <span>Monday - Friday</span>
-                  <span>9:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday</span>
-                  <span>10:00 AM - 4:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sunday</span>
-                  <span>Closed</span>
-                </div>
-              </div>
-            </motion.div>
+            
 
             {/* Social Links */}
             <motion.div
