@@ -6,7 +6,6 @@ import {
   Target,
   Award,
   Star,
-  ArrowRight,
 } from 'lucide-react'
 
 // Feature flags

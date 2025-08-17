@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Initialize Firebase only if not already initialized
-let app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0]
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0]
 const db = getFirestore(app)
 
 export async function POST(request: NextRequest) {

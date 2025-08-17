@@ -8,8 +8,6 @@ import {
   MapPin,
   Send,
   CheckCircle,
-  MessageSquare,
-  Clock,
   AlertCircle,
 } from 'lucide-react'
 
