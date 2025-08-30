@@ -109,7 +109,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold gradient-text mb-2">5+</div>
+              <div className="text-3xl font-bold gradient-text mb-2">10+</div>
               <div className="text-muted-foreground">Projects Completed</div>
             </div>
             <div className="text-center">
@@ -117,8 +117,8 @@ export function HeroSection() {
               <div className="text-muted-foreground">Client Satisfaction</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold gradient-text mb-2">24/7</div>
-              <div className="text-muted-foreground">Support Available</div>
+              <div className="text-3xl font-bold gradient-text mb-2">8+</div>
+              <div className="text-muted-foreground">Years Experience</div>
             </div>
           </motion.div>
         </div>
