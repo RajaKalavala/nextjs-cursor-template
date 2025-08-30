@@ -11,7 +11,6 @@ import {
   AlertCircle,
 } from 'lucide-react'
 
-
 const contactInfo = [
   {
     icon: Mail,
@@ -36,13 +35,6 @@ const contactInfo = [
   },
 ]
 
-const socialLinks = [
-  { name: 'LinkedIn', url: '#', icon: '💼' },
-  { name: 'GitHub', url: '#', icon: '🐙' },
-  { name: 'Twitter', url: '#', icon: '🐦' },
-  { name: 'Instagram', url: '#', icon: '📷' },
-]
-
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
@@ -58,9 +50,9 @@ export function ContactSection() {
   // Listen for custom event to set project type
   useEffect(() => {
     const handleSetProjectType = (event: CustomEvent) => {
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
-        projectType: event.detail.projectType
+        projectType: event.detail.projectType,
       }))
     }
 
@@ -68,16 +60,22 @@ export function ContactSection() {
     const urlParams = new URLSearchParams(window.location.search)
     const projectType = urlParams.get('type')
     if (projectType === 'consultation') {
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
-        projectType: 'consultation'
+        projectType: 'consultation',
       }))
     }
 
-    window.addEventListener('setProjectType', handleSetProjectType as EventListener)
-    
+    window.addEventListener(
+      'setProjectType',
+      handleSetProjectType as EventListener
+    )
+
     return () => {
-      window.removeEventListener('setProjectType', handleSetProjectType as EventListener)
+      window.removeEventListener(
+        'setProjectType',
+        handleSetProjectType as EventListener
+      )
     }
   }, [])
 
@@ -127,7 +125,11 @@ export function ContactSection() {
       }, 3000)
     } catch (err) {
       setIsSubmitting(false)
-      setError(err instanceof Error ? err.message : 'Failed to send message. Please try again.')
+      setError(
+        err instanceof Error
+          ? err.message
+          : 'Failed to send message. Please try again.'
+      )
     }
   }
 
@@ -178,10 +180,10 @@ export function ContactSection() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-8">
                   <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
-                  <h4 className="text-xl font-semibold mb-2 text-red-600">Error</h4>
-                  <p className="text-muted-foreground mb-4">
-                    {error}
-                  </p>
+                  <h4 className="text-xl font-semibold mb-2 text-red-600">
+                    Error
+                  </h4>
+                  <p className="text-muted-foreground mb-4">{error}</p>
                   <button
                     onClick={() => setError(null)}
                     className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
@@ -260,7 +262,7 @@ export function ContactSection() {
                           backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e")`,
                           backgroundPosition: 'right 12px center',
                           backgroundRepeat: 'no-repeat',
-                          backgroundSize: '16px 12px'
+                          backgroundSize: '16px 12px',
                         }}>
                         <option value="">Select project type</option>
                         <option value="mobile">Mobile App Development</option>
@@ -344,31 +346,6 @@ export function ContactSection() {
                 </motion.a>
               ))}
             </div>
-
-            
-
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              viewport={{ once: true }}>
-              <h4 className="font-semibold text-foreground mb-4">Follow Us</h4>
-              <div className="flex gap-4">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={social.name}
-                    href={social.url}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:border-primary/50 hover:scale-110 transition-all duration-300 text-2xl">
-                    {social.icon}
-                  </motion.a>
-                ))}
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
