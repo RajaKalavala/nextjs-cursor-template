@@ -49,7 +49,7 @@ export function Navigation() {
           <div className="flex items-center">
             <button
               onClick={() => scrollToSection('#home')}
-              className="hover:opacity-80 transition-opacity">
+              className="hover:opacity-80 transition-opacity cursor-pointer">
               <Logo size="md" />
             </button>
           </div>
@@ -60,7 +60,7 @@ export function Navigation() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground/80 hover:text-foreground transition-colors font-medium">
+                className="text-foreground/80 hover:text-foreground transition-colors font-medium cursor-pointer">
                 {item.name}
               </button>
             ))}
@@ -76,7 +76,7 @@ export function Navigation() {
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md text-foreground hover:bg-accent transition-colors">
+              className="p-2 rounded-md text-foreground hover:bg-accent transition-colors cursor-pointer">
               {isOpen ? (
                 <X className="h-5 w-5" />
               ) : (
@@ -94,7 +94,7 @@ export function Navigation() {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-3 py-2 text-foreground/80 hover:text-foreground hover:bg-accent rounded-md transition-colors font-medium">
+                  className="block w-full text-left px-3 py-2 text-foreground/80 hover:text-foreground hover:bg-accent rounded-md transition-colors font-medium cursor-pointer">
                   {item.name}
                 </button>
               ))}

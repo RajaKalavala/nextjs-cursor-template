@@ -33,7 +33,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 pb-20">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/10 via-transparent to-brand-accent/10" />
 

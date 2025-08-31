@@ -1,43 +1,39 @@
 'use client'
 
-import { Moon, Sun, Monitor } from 'lucide-react'
+import { Moon, Sun } from 'lucide-react'
 import { useTheme } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme()
 
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }
+
   return (
-    <div className="flex items-center space-x-1 rounded-lg border bg-card p-1">
-      <button
-        onClick={() => setTheme('light')}
+    <button
+      onClick={toggleTheme}
+      className="relative w-14 h-7 rounded-full bg-muted border border-border cursor-pointer transition-colors duration-300 hover:bg-accent"
+      aria-label="Toggle theme">
+      {/* Sliding Circle */}
+      <div
         className={cn(
-          'flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium transition-all hover:bg-accent hover:text-accent-foreground',
-          theme === 'light' && 'bg-accent text-accent-foreground'
+          'absolute top-0.5 w-6 h-6 rounded-full bg-background border border-border shadow-sm transition-transform duration-300 ease-in-out flex items-center justify-center',
+          theme === 'dark' ? 'translate-x-7' : 'translate-x-0.5'
         )}>
-        <Sun className="h-4 w-4" />
-        <span className="sr-only">Light mode</span>
-      </button>
+        {theme === 'light' ? (
+          <Sun className="h-3 w-3 text-yellow-500" />
+        ) : (
+          <Moon className="h-3 w-3 text-blue-500" />
+        )}
+      </div>
 
-      <button
-        onClick={() => setTheme('dark')}
-        className={cn(
-          'flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium transition-all hover:bg-accent hover:text-accent-foreground',
-          theme === 'dark' && 'bg-accent text-accent-foreground'
-        )}>
-        <Moon className="h-4 w-4" />
-        <span className="sr-only">Dark mode</span>
-      </button>
-
-      <button
-        onClick={() => setTheme('system')}
-        className={cn(
-          'flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium transition-all hover:bg-accent hover:text-accent-foreground',
-          theme === 'system' && 'bg-accent text-accent-foreground'
-        )}>
-        <Monitor className="h-4 w-4" />
-        <span className="sr-only">System mode</span>
-      </button>
-    </div>
+      {/* Background Icons (subtle) */}
+      <div className="absolute inset-0 flex items-center justify-between px-1.5">
+        <Sun className="h-3 w-3 text-muted-foreground/30" />
+        <Moon className="h-3 w-3 text-muted-foreground/30" />
+      </div>
+    </button>
   )
 }
