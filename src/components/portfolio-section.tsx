@@ -105,46 +105,46 @@ const projects = [
   },
   {
     id: 3,
-    title: 'ThoughtOfTheDay',
+    title: 'Travel Website',
     description:
-      'Gives a new quote on daily basis which you can reflect on and take action. Features personalized quote recommendations and mood tracking to help you.',
-    image: '/images/thoughtoftheday.jpg',
-    category: 'mobile',
+      'Modern travel booking website with destination discovery, hotel reservations, and travel planning features.',
+    image: '/images/travelwebsite.png',
+    category: 'web',
     technologies: [
-      'React Native',
-      'Node.js',
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
       'MongoDB',
-      'REST API',
-      'Cron Jobs',
+      'Stripe',
     ],
     liveUrl: '#',
     githubUrl: '#',
     featured: false,
     details: {
       overview:
-        "ThoughtOfTheDay is a mindfulness and personal development app that delivers curated inspirational quotes daily. It includes mood tracking, reflection tools, and personalized content to support users' mental well-being journey.",
+        'A comprehensive travel booking platform that provides users with seamless destination discovery, hotel reservations, and travel planning capabilities. The website offers an intuitive interface for browsing destinations, comparing prices, and booking travel experiences.',
       features: [
-        'Daily curated inspirational quotes with push notifications',
-        'Mood tracking and emotional wellness monitoring',
-        'Personalized quote recommendations based on user preferences',
-        'Reflection journal with guided prompts',
-        'Progress tracking and achievement milestones',
-        'Social sharing of favorite quotes and insights',
+        'Destination discovery with interactive maps and filters',
+        'Hotel booking with real-time availability and pricing',
+        'Travel itinerary planning and customization',
+        'Secure payment processing for bookings',
+        'User reviews and ratings system',
+        'Multi-language support for international travelers',
       ],
       challenges: [
-        'Curating high-quality, diverse quote content',
-        'Implementing effective push notification scheduling',
-        'Creating engaging user experience for daily usage',
-        'Building personalized recommendation system',
+        'Integrating multiple third-party booking APIs',
+        'Handling real-time pricing and availability updates',
+        'Creating responsive design for mobile travelers',
+        'Implementing secure payment processing for travel bookings',
       ],
       solutions: [
-        'Built comprehensive quote database with multiple categories',
-        'Used cron jobs for reliable notification delivery',
-        'Implemented gamification elements to encourage daily engagement',
-        'Developed content-based filtering for personalization',
+        'Built unified API layer to manage multiple booking providers',
+        'Implemented real-time data synchronization with WebSocket connections',
+        'Designed mobile-first responsive interface with PWA capabilities',
+        'Integrated Stripe with travel-specific payment workflows',
       ],
       impact:
-        'Achieved 85% daily active user retention and helped users improve mood scores by 30%.',
+        'Increased booking conversion rates by 40% and improved user engagement by 60%.',
     },
   },
   {
@@ -152,7 +152,7 @@ const projects = [
     title: 'Dental Clinic Website',
     description:
       'Modern, responsive dental clinic website with appointment booking, patient portal, and online consultation features.',
-    image: '/images/dental-clinic.jpg',
+    image: '/images/dentalclinic.png',
     category: 'web',
     technologies: [
       'Next.js',
@@ -193,16 +193,16 @@ const projects = [
   },
   {
     id: 5,
-    title: 'N8N-Automations',
+    title: 'AI Automation - Custom Research Agent',
     description:
-      'An automated flow for researching about a company from latest news and preparing the right pitch for your sales.',
-    image: '/images/n8n-automations.jpg',
+      'Intelligent research automation system that analyzes market trends, competitor data, and industry insights to provide actionable business intelligence.',
+    image: '/images/n8nResearch.png',
     category: 'ai',
     technologies: [
       'N8N',
       'OpenAI API',
-      'News API',
-      'CRM Integration',
+      'Research APIs',
+      'Data Analytics',
       'Webhooks',
     ],
     liveUrl: '#',
@@ -210,73 +210,73 @@ const projects = [
     featured: false,
     details: {
       overview:
-        'N8N-Automations is an intelligent workflow automation system that researches companies using real-time news data and generates personalized sales pitches. It streamlines the sales research process and improves outreach effectiveness.',
+        'AI Automation - Custom Research Agent is an advanced research automation system that leverages N8N workflows and AI to conduct comprehensive market research, competitor analysis, and industry trend monitoring. It provides actionable insights for strategic decision-making.',
       features: [
-        'Automated company research using multiple news sources',
-        'AI-powered sales pitch generation with OpenAI',
-        'CRM integration for lead management and tracking',
-        'Real-time news monitoring and alerts',
-        'Customizable pitch templates and tone adjustment',
-        'Analytics dashboard for pitch performance tracking',
+        'Automated market research and trend analysis',
+        'Competitor monitoring and competitive intelligence',
+        'Real-time data collection from multiple sources',
+        'AI-powered insights generation and reporting',
+        'Custom research workflows and automation',
+        'Interactive dashboards for research visualization',
       ],
       challenges: [
-        'Processing and analyzing large volumes of news data',
-        'Generating contextually relevant sales pitches',
-        'Integrating with multiple CRM systems',
-        'Ensuring data accuracy and relevance',
+        'Processing and analyzing large volumes of research data',
+        'Ensuring data accuracy and relevance across sources',
+        'Creating meaningful insights from complex datasets',
+        'Integrating multiple research APIs and data sources',
       ],
       solutions: [
-        'Implemented efficient data processing pipelines with N8N',
-        "Used OpenAI's GPT models for intelligent pitch generation",
-        'Built flexible API integrations for various CRM platforms',
-        'Implemented data validation and quality checks',
+        'Built robust N8N workflows for automated data collection',
+        'Implemented OpenAI API for intelligent data analysis and insights',
+        'Created comprehensive data validation and quality assurance processes',
+        'Developed flexible API integrations for various research sources',
       ],
       impact:
-        'Reduced research time by 80% and increased response rates by 150%.',
+        'Reduced research time by 75% and improved decision-making accuracy by 90%.',
     },
   },
   {
     id: 6,
-    title: 'CustomerSupport',
+    title: 'AI Automation - Voice Assistance',
     description:
-      'Automated solution for getting faster resolutions, happier customers and Reduced Churn by routing issues to right people.',
-    image: '/images/customersupport.jpg',
+      'Intelligent voice assistant automation system that handles customer inquiries and business processes through natural language processing.',
+    image: '/images/n8nimage.png',
     category: 'ai',
     technologies: [
-      'AI/ML',
-      'NLP',
-      'Zendesk API',
-      'Slack Integration',
-      'Analytics',
+      'N8N',
+      'RetellAI',
+      'OpenAI API',
+      'Webhooks',
+      'Voice Processing',
     ],
     liveUrl: '#',
     githubUrl: '#',
     featured: false,
     details: {
       overview:
-        'CustomerSupport is an AI-powered customer service automation platform that intelligently routes support tickets, provides instant responses, and ensures faster issue resolution. It integrates with existing support systems to enhance customer satisfaction.',
+        'AI Automation - Voice Assistance is an advanced voice automation system that leverages N8N workflows and RetellAI to create intelligent voice assistants. The system handles customer inquiries, business processes, and automated responses through natural language processing and voice synthesis.',
       features: [
-        'Intelligent ticket routing based on issue complexity and agent expertise',
-        'AI-powered instant responses for common queries',
-        'Sentiment analysis for priority escalation',
-        'Integration with Zendesk, Slack, and other support tools',
-        'Real-time analytics and performance metrics',
-        'Automated follow-up and satisfaction surveys',
+        'Natural language voice processing and understanding',
+        'Automated customer inquiry handling via voice',
+        'Integration with business systems and databases',
+        'Multi-language voice support and recognition',
+        'Real-time voice synthesis and response generation',
+        'Workflow automation with N8N for complex processes',
       ],
       challenges: [
-        'Accurately classifying and routing complex support issues',
-        'Maintaining consistent response quality across different channels',
-        'Integrating with multiple third-party support platforms',
-        'Handling multilingual support requests',
+        'Achieving high accuracy in voice recognition and processing',
+        'Integrating multiple AI services for seamless voice interactions',
+        'Handling complex business logic through voice commands',
+        'Ensuring low latency for real-time voice responses',
       ],
       solutions: [
-        'Trained custom NLP models for issue classification',
-        'Implemented response templates with dynamic content generation',
-        'Built comprehensive API integrations with webhook support',
-        'Used translation APIs for multilingual support',
+        'Implemented RetellAI for advanced voice processing capabilities',
+        'Built N8N workflows for complex business logic automation',
+        'Integrated OpenAI API for natural language understanding',
+        'Optimized response times with efficient webhook handling',
       ],
       impact:
-        'Reduced response time by 70% and improved customer satisfaction scores by 40%.',
+        'Reduced customer service costs by 50% and improved response accuracy by 85%.',
     },
   },
 ]
@@ -359,7 +359,12 @@ export function PortfolioSection() {
                   {/* Project Image */}
                   <div className="relative h-48 overflow-hidden">
                     {project.title === 'MyDressDiary' ||
-                    project.title === 'StreetBites' ? (
+                    project.title === 'StreetBites' ||
+                    project.title === 'Dental Clinic Website' ||
+                    project.title === 'Travel Website' ||
+                    project.title === 'AI Automation - Voice Assistance' ||
+                    project.title ===
+                      'AI Automation - Custom Research Agent' ? (
                       <>
                         <Image
                           src={project.image}
@@ -478,7 +483,13 @@ export function PortfolioSection() {
 
                 <div className="relative h-48 rounded-xl mb-6 overflow-hidden">
                   {selectedProject.title === 'MyDressDiary' ||
-                  selectedProject.title === 'StreetBites' ? (
+                  selectedProject.title === 'StreetBites' ||
+                  selectedProject.title === 'Dental Clinic Website' ||
+                  selectedProject.title === 'Travel Website' ||
+                  selectedProject.title ===
+                    'AI Automation - Voice Assistance' ||
+                  selectedProject.title ===
+                    'AI Automation - Custom Research Agent' ? (
                     <>
                       <Image
                         src={selectedProject.image}

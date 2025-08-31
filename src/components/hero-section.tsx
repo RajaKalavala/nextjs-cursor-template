@@ -118,7 +118,9 @@ export function HeroSection() {
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold gradient-text mb-2">8+</div>
-              <div className="text-muted-foreground">Years Experience</div>
+              <div className="text-muted-foreground">
+                Years of Development Experience
+              </div>
             </div>
           </motion.div>
         </div>

@@ -1,12 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import {
-  Users,
-  Target,
-  Award,
-  Star,
-} from 'lucide-react'
+import { Users, Target, Award, Star } from 'lucide-react'
 
 // Feature flags
 const SHOW_TEAM_SECTION = false
@@ -109,7 +104,7 @@ export function AboutSection() {
           viewport={{ once: true }}
           className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            About <span className="gradient-text">Botiksha.in</span>
+            About <span className="gradient-text">BotikshaAI</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             We are a passionate team of developers, designers, and innovators
@@ -164,32 +159,44 @@ export function AboutSection() {
             </h3>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Botiksha was born from a small team of passionate builders with a bold vision — to break the barriers of traditional software development. We asked ourselves: why should creating powerful digital solutions take months, when businesses need results today?
+                Botiksha was born from a small team of passionate builders with
+                a bold vision — to break the barriers of traditional software
+                development. We asked ourselves: why should creating powerful
+                digital solutions take months, when businesses need results
+                today?
               </p>
               <p>
-                Fueled by AI and modern frameworks, we set out to change the way applications are built. From mobile apps that feel native across platforms, to web solutions that scale seamlessly, to AI-powered automations that eliminate repetitive work — we focus on delivering speed, quality, and impact.
+                Fueled by AI and modern frameworks, we set out to change the way
+                applications are built. From mobile apps that feel native across
+                platforms, to web solutions that scale seamlessly, to AI-powered
+                automations that eliminate repetitive work — we focus on
+                delivering speed, quality, and impact.
               </p>
               <p>
-                Our mission is simple yet ambitious: to empower businesses with technology that drives growth, delights users, and leaves a lasting mark in the digital world.
+                Our mission is simple yet ambitious: to empower businesses with
+                technology that drives growth, delights users, and leaves a
+                lasting mark in the digital world.
               </p>
               <p>
-                At Botiksha, we don&apos;t just write code. We craft experiences. We accelerate ideas. And we make technology an ally for every business, big or small.
+                At Botiksha, we don&apos;t just write code. We craft
+                experiences. We accelerate ideas. And we make technology an ally
+                for every business, big or small.
               </p>
             </div>
           </div>
-                                           <div className="relative">
-              <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl p-8 h-full min-h-[430px] flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">⚡</div>
-                  <div className="text-2xl font-bold text-foreground mb-2">
-                    Speed & Innovation
-                  </div>
-                  <div className="text-muted-foreground text-sm max-w-xs">
-                    Breaking barriers, delivering results faster than ever before
-                  </div>
+          <div className="relative">
+            <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl p-8 h-full min-h-[430px] flex items-center justify-center">
+              <div className="text-center">
+                <div className="text-6xl mb-4">⚡</div>
+                <div className="text-2xl font-bold text-foreground mb-2">
+                  Speed & Innovation
+                </div>
+                <div className="text-muted-foreground text-sm max-w-xs">
+                  Breaking barriers, delivering results faster than ever before
                 </div>
               </div>
             </div>
+          </div>
         </motion.div>
 
         {/* Values Section */}
