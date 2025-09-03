@@ -324,15 +324,11 @@ export function PrivacyPolicyContent() {
                 <div className="bg-muted/50 rounded-xl p-6 space-y-3">
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-primary" />
-                    <span>Email: privacy@botiksha.in</span>
+                    <span>Email: admin@botiksha.in</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-primary" />
-                    <span>Phone: +91-XXXXXXXXXX</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-primary" />
-                    <span>Address: [Your Business Address]</span>
+                    <span>Phone: +91 891 953 5478</span>
                   </div>
                 </div>
               </div>
