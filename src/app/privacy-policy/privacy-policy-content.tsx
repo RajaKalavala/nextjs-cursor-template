@@ -251,7 +251,7 @@ export function PrivacyPolicyContent() {
                 <div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-pink-600 rounded-lg flex items-center justify-center">
                   <Shield className="w-5 h-5 text-white" />
                 </div>
-                <h2 className="text-2xl font-bold">Children's Privacy</h2>
+                <h2 className="text-2xl font-bold">Children&apos;s Privacy</h2>
               </div>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
@@ -299,7 +299,7 @@ export function PrivacyPolicyContent() {
                   We may update this privacy policy from time to time to reflect
                   changes in our practices or applicable laws. We will notify
                   you of any material changes by posting the new policy on this
-                  page and updating the "Last Updated" date.
+                  page and updating the &ldquo;Last Updated&rdquo; date.
                 </p>
                 <p>
                   We encourage you to review this policy periodically to stay
