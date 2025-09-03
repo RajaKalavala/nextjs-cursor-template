@@ -37,7 +37,7 @@ export function Footer() {
             viewport={{ once: true }}
             className="lg:col-span-1">
             <h3 className="text-2xl font-bold gradient-text mb-4">
-              Botiksha.in
+              BotikshaAI
             </h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Transforming ideas into powerful digital solutions. We specialize
@@ -142,7 +142,7 @@ export function Footer() {
           className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span>© 2025 Botiksha.in. All rights reserved.</span>
+              <span>© 2025 BotikshaAI. All rights reserved.</span>
               <span>•</span>
               <span>Made with</span>
               <Heart className="w-4 h-4 text-red-500" />
@@ -151,7 +151,7 @@ export function Footer() {
 
             <div className="flex items-center gap-4">
               <a
-                href="#"
+                href="/privacy-policy"
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Privacy Policy
               </a>
